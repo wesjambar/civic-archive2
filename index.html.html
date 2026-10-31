@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Civic Archive is an independent educational resource exploring American government, constitutional history, and civic institutions.">
+<title>The Civic Archive | American Government & History</title>
+<style>
+:root{
+  --navy:#142b45;--navy2:#203d5b;--ink:#202a34;--muted:#687584;
+  --paper:#f7f6f2;--white:#fff;--line:#dfe3e7;--gold:#b28a4b;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topline{height:5px;background:var(--gold)}
+header{background:var(--white);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1160px;margin:auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;min-width:250px}
+.seal{width:48px;height:48px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--navy);font-family:var(--serif);font-size:22px;position:relative}
+.seal:before{content:"";position:absolute;inset:4px;border:1px solid #d8c29e;border-radius:50%}
+.brand-name{font-family:var(--serif);font-size:21px;letter-spacing:.04em;color:var(--navy);font-weight:700}
+.brand-sub{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+nav{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:700;color:#405064}
+nav a:hover{color:var(--gold)}
+.nav-cta{padding:10px 15px;border:1px solid var(--navy);color:var(--navy)}
+.hero{background:linear-gradient(115deg,rgba(15,35,56,.97),rgba(29,57,83,.93)),linear-gradient(45deg,#142b45,#3a5268);color:white}
+.hero-inner{max-width:1160px;margin:auto;padding:82px 28px 78px;display:grid;grid-template-columns:1.25fr .75fr;gap:65px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#d7bd91;font-weight:700}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,5.2vw,66px);line-height:1.08;letter-spacing:-.025em;margin:18px 0 22px;max-width:690px}
+.hero p{font-size:17px;color:#e0e7ee;max-width:620px;margin:0 0 30px;line-height:1.8}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 19px;font-size:13px;font-weight:700;letter-spacing:.03em}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-outline{border:1px solid rgba(255,255,255,.55);color:white}
+.hero-note{border-left:1px solid rgba(215,189,145,.65);padding:9px 0 9px 25px;color:#e6eaf0}
+.hero-note .big{font-family:var(--serif);font-size:25px;line-height:1.35;color:#fff;margin-bottom:13px}
+.hero-note p{font-size:13px;color:#cbd5df;margin:0}
+main{max-width:1160px;margin:auto;padding:62px 28px 78px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:#9a7844;font-weight:700}
+h2{font-family:var(--serif);font-size:34px;font-weight:400;color:var(--navy);margin:7px 0 0;line-height:1.2}
+.section-intro{max-width:520px;color:var(--muted);font-size:14px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);padding:25px 24px 23px;min-height:220px;transition:transform .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-3px);border-color:#c9b38e}
+.card-number{font-family:var(--serif);font-size:14px;color:var(--gold);letter-spacing:.08em}
+.card h3{font-family:var(--serif);font-weight:400;font-size:23px;color:var(--navy);margin:13px 0 9px}
+.card p{font-size:13px;color:var(--muted);margin:0 0 18px;line-height:1.7}
+.card a{font-size:12px;font-weight:700;color:var(--navy);border-bottom:1px solid #c9b38e;padding-bottom:3px}
+.feature{margin-top:64px;background:#eceae4;display:grid;grid-template-columns:1fr 1fr;gap:38px;padding:38px}
+.feature h2{font-size:31px}
+.feature p{font-size:14px;color:#596675;line-height:1.8}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:center}
+.feature-item{background:rgba(255,255,255,.72);padding:15px 16px;border-left:2px solid var(--gold);font-family:var(--serif);font-size:16px;color:var(--navy)}
+.search-panel{margin-top:62px;padding:32px;background:#fff;border:1px solid var(--line)}
+.search-panel h2{font-size:28px}
+.search-row{display:flex;gap:10px;margin-top:20px}
+.search-row input{flex:1;min-width:0;border:1px solid #cfd5db;padding:13px 14px;background:#fcfcfb;outline:none}
+.search-row input:focus{border-color:var(--gold)}
+.search-row button{border:0;background:var(--navy);color:#fff;padding:0 22px;font-size:13px;font-weight:700;cursor:pointer}
+.search-hint{font-size:12px;color:var(--muted);margin:11px 0 0}
+#search-result{font-size:13px;color:var(--navy);margin-top:14px;min-height:18px}
+.about{display:grid;grid-template-columns:.65fr 1.35fr;gap:38px;margin-top:64px;padding-top:35px;border-top:1px solid var(--line)}
+.about h2{font-size:29px}
+.about p{margin:0;color:var(--muted);font-size:14px;line-height:1.85}
+footer{background:#10243a;color:#d7e0e8}
+.footer-inner{max-width:1160px;margin:auto;padding:34px 28px;display:flex;justify-content:space-between;gap:25px;align-items:center}
+.footer-brand{font-family:var(--serif);font-size:18px;color:#fff}
+footer p{font-size:11px;color:#aebdca;margin:5px 0 0}
+.footer-links{display:flex;gap:20px;font-size:12px;color:#d7e0e8}
+.disclaimer{max-width:1160px;margin:auto;padding:0 28px 24px;font-size:10px;color:#9eafbd;line-height:1.6}
+@media(max-width:800px){
+ .header-inner{align-items:flex-start;flex-direction:column;padding:18px 20px}
+ nav{width:100%;gap:17px;flex-wrap:wrap}
+ .hero-inner{grid-template-columns:1fr;gap:35px;padding:62px 20px}
+ .hero-note{max-width:540px}
+ main{padding:48px 20px 60px}
+ .grid{grid-template-columns:1fr 1fr}
+ .feature{grid-template-columns:1fr;padding:27px}
+ .about{grid-template-columns:1fr;gap:14px}
+ .footer-inner{padding:28px 20px;align-items:flex-start;flex-direction:column}
+ .disclaimer{padding:0 20px 22px}
+}
+@media(max-width:520px){
+ .brand-name{font-size:19px}
+ nav{gap:13px;font-size:12px}
+ .nav-cta{padding:7px 10px}
+ .grid{grid-template-columns:1fr}
+ .section-head{align-items:flex-start;flex-direction:column}
+ .feature-list{grid-template-columns:1fr}
+ .search-panel{padding:23px}
+ .search-row{flex-direction:column}
+ .search-row button{padding:13px}
+ .footer-links{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="The Civic Archive home">
+      <div class="seal" aria-hidden="true">C</div>
+      <div><div class="brand-name">THE CIVIC ARCHIVE</div><div class="brand-sub">American government · History · Institutions</div></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#topics">Explore</a>
+      <a href="#constitution">Constitution</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#research">Research tools</a>
+    </nav>
+  </div>
+</header>
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">An independent civic education project</div>
+      <h1>Understand the institutions that shape a nation.</h1>
+      <p>A clear, carefully organized guide to the American system of government, the Constitution, and the history behind our public institutions.</p>
+      <div class="actions">
+        <a class="btn btn-light" href="#topics">Explore the archive</a>
+        <a class="btn btn-outline" href="#constitution">Read the Constitution</a>
+      </div>
+    </div>
+    <aside class="hero-note">
+      <div class="big">“A more informed citizenry is essential to a functioning republic.”</div>
+      <p>Explore primary sources, historical context, and plain-language explanations of how American government works.</p>
+    </aside>
+  </div>
+</section>
+<main>
+  <section id="topics">
+    <div class="section-head">
+      <div><div class="kicker">Browse the collection</div><h2>Explore the archive</h2></div>
+      <p class="section-intro">Start with a subject, then follow the documents, people, and events that shaped it.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="card-number">01 / FOUNDING DOCUMENTS</div><h3>The Constitution</h3><p>Explore the articles, amendments, and principles that establish the framework of the federal government.</p><a href="https://www.archives.gov/founding-docs/constitution" target="_blank" rel="noopener">View primary source ↗</a></article>
+      <article class="card"><div class="card-number">02 / THE LEGISLATIVE BRANCH</div><h3>Congress</h3><p>Learn how the House and Senate are organized, how legislation moves, and how representation works.</p><a href="https://www.congress.gov/" target="_blank" rel="noopener">Explore Congress.gov ↗</a></article>
+      <article class="card"><div class="card-number">03 / THE EXECUTIVE BRANCH</div><h3>The Presidency</h3><p>Understand the constitutional role of the president, the executive departments, and federal administration.</p><a href="https://www.whitehouse.gov/about-the-white-house/" target="_blank" rel="noopener">Read the overview ↗</a></article>
+      <article class="card"><div class="card-number">04 / THE JUDICIAL BRANCH</div><h3>Federal Courts</h3><p>Discover the structure of the federal judiciary and the role courts play in interpreting the law.</p><a href="https://www.uscourts.gov/about-federal-courts" target="_blank" rel="noopener">Explore the courts ↗</a></article>
+      <article class="card"><div class="card-number">05 / AMERICAN HISTORY</div><h3>Historical Timeline</h3><p>Place major constitutional debates, elections, legislation, and turning points in historical context.</p><a href="https://www.loc.gov/" target="_blank" rel="noopener">Explore the Library of Congress ↗</a></article>
+      <article class="card"><div class="card-number">06 / CIVIC PARTICIPATION</div><h3>The Citizen’s Role</h3><p>Learn about elections, federalism, public participation, and the responsibilities of civic life.</p><a href="https://www.usa.gov/voting" target="_blank" rel="noopener">Read voting information ↗</a></article>
+    </div>
+  </section>
+
+  <section class="feature" id="constitution">
+    <div>
+      <div class="kicker">Featured collection</div>
+      <h2>The Constitution, explained.</h2>
+      <p>The Constitution is both a founding document and the operating framework of the federal government. The archive’s goal is to make its structure easier to understand while keeping the original text close at hand.</p>
+      <a class="btn" style="background:var(--navy);color:white;margin-top:8px" href="https://constitution.congress.gov/" target="_blank" rel="noopener">Visit the Constitution Annotated ↗</a>
+    </div>
+    <div class="feature-list">
+      <div class="feature-item">The Preamble</div><div class="feature-item">The three branches</div>
+      <div class="feature-item">Federalism</div><div class="feature-item">The Bill of Rights</div>
+      <div class="feature-item">Amendment process</div><div class="feature-item">Checks and balances</div>
+    </div>
+  </section>
+
+  <section class="search-panel" id="research">
+    <div class="kicker">Research desk</div>
+    <h2>Find a subject in the archive</h2>
+    <p class="section-intro">Search a topic to see a suggested starting point in the collection.</p>
+    <div class="search-row">
+      <input id="topic-search" type="search" placeholder="Try “Senate”, “amendments”, or “federalism”" aria-label="Search archive topics">
+      <button type="button" onclick="searchArchive()">Search</button>
+    </div>
+    <div id="search-result" aria-live="polite"></div>
+    <p class="search-hint">This starter search covers the topics listed on this page. More documents and entries can be added as the archive grows.</p>
+  </section>
+
+  <section class="about" id="about">
+    <div><div class="kicker">About this project</div><h2>Knowledge before opinion.</h2></div>
+    <p>The Civic Archive is an independent educational project. It is not affiliated with or endorsed by the U.S. government or any government agency. Its purpose is to make civic information accessible, encourage the use of primary sources, and present historical and institutional topics with care. Where possible, readers are directed to original documents and official public resources.</p>
+  </section>
+</main>
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-brand">THE CIVIC ARCHIVE</div><p>Independent civic education. Grounded in primary sources.</p></div>
+    <div class="footer-links"><a href="#topics">Explore</a><a href="#constitution">Constitution</a><a href="#about">About</a></div>
+  </div>
+  <div class="disclaimer">This website is an independent educational project and is not an official website of the United States government. External links lead to third-party resources. Content should be checked against primary sources for accuracy and currency.</div>
+</footer>
+<script>
+const topics = [
+ {terms:["constitution","preamble","amendment","bill of rights","checks and balances"],name:"The Constitution",url:"https://www.archives.gov/founding-docs/constitution",desc:"Start with the original text at the National Archives."},
+ {terms:["senate","house","congress","legislation","bill"],name:"Congress",url:"https://www.congress.gov/",desc:"Explore federal legislation and congressional information."},
+ {terms:["president","presidency","executive","white house"],name:"The Presidency",url:"https://www.whitehouse.gov/about-the-white-house/",desc:"Read about the executive branch and the presidency."},
+ {terms:["court","judicial","supreme court","judge"],name:"Federal Courts",url:"https://www.uscourts.gov/about-federal-courts",desc:"Learn about the federal court system."},
+ {terms:["history","timeline","founding","library of congress"],name:"American History",url:"https://www.loc.gov/",desc:"Search collections from the Library of Congress."},
+ {terms:["voting","election","citizen","federalism","civic"],name:"Civic Participation",url:"https://www.usa.gov/voting",desc:"Find nonpartisan information about voting and civic participation."}
+];
+function searchArchive(){
+ const q=document.getElementById("topic-search").value.trim().toLowerCase();
+ const out=document.getElementById("search-result");
+ if(!q){out.textContent="Enter a topic to begin your search.";return;}
+ const matches=topics.filter(t=>t.terms.some(term=>term.includes(q)||q.includes(term)));
+ if(matches.length){
+   out.innerHTML=matches.map(t=>`<div style="padding:12px 0;border-top:1px solid #e5e8eb"><strong>${t.name}</strong> — ${t.desc} <a style="font-weight:bold;text-decoration:underline" href="${t.url}" target="_blank" rel="noopener">Open resource ↗</a></div>`).join("");
+ }else{
+   out.textContent="No matching topic in this starter collection. Try Constitution, Congress, courts, history, or voting.";
+ }
+}
+document.getElementById("topic-search").addEventListener("keydown",e=>{if(e.key==="Enter")searchArchive()});
+</script>
+</body>
+</html>
